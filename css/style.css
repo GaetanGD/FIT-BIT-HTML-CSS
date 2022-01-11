@@ -1,0 +1,252 @@
+:root {
+    --bleu: #114357;
+    --bleurgb: 17,67,87;
+    --mauve: #A6787D;
+    --mauvergb: 166,120,125;
+    --rose: #F29492;
+    --rosergb: 242,148,146;
+}
+
+body {
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+p {
+    font-size:1.5rem;
+}
+h2 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+.img-left, .img-right {
+    position: relative;
+}
+.img-left::before {
+    content:'';
+    position: absolute;
+    height: 90%;
+    width:70px;
+    background: linear-gradient(var(--mauve),var(--rose));
+    border-top-left-radius: 15px;
+    top:-30px;
+    left:-20px;
+    z-index: -1;
+}
+.img-right::before {
+    content:'';
+    position: absolute;
+    height: 90%;
+    width:70px;
+    background: linear-gradient(var(--mauve) 60%,var(--bleu));
+    border-bottom-right-radius: 15px;
+    bottom:-30px;
+    right:-20px;
+    z-index: -1;
+}
+
+header {
+    background: linear-gradient(55deg, rgba(var(--rosergb), 0.93), rgba(var(--mauvergb), 0.93), rgba(var(--bleurgb), 0.93)), url(../img/03-Montre-560x420.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    color:white;
+}
+header nav img {
+    width:150px;
+}
+header nav ul li {
+    margin-left: 40px;
+}
+header #titre {
+    padding: 180px 0;
+}
+header #titre h1 {
+    font-size: 7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+header #titre h2 {
+    font-size: 3rem;
+    font-weight: 100;
+}
+header #titre a {
+    border:1px solid white; 
+    border-radius:50px;
+    color:white;
+    font-size: 1.6rem;
+    margin-top:15px;
+    padding:7px 15px;
+    text-transform: uppercase;
+}
+header #titre a:hover {
+    background-color: white;
+    color: var(--rose);
+}
+
+section {
+    margin-top: 100px;
+}
+
+#presentation, #appli {
+    border-radius: 30px;
+    box-shadow: 0 0 7px rgba(0,0,0,0.3);
+    padding-bottom:30px;
+    padding-top:50px;
+}
+#presentation h2, #appli h2{
+    color: var(--rose);
+}
+#presentation img {
+    width:64px;
+}
+#presentation li h3 {
+    font-weight: 700;
+    margin:20px auto;
+}
+
+#fonctionnalites h2{
+    display: inline-block;
+    margin:auto;
+    position:relative;
+}
+#fonctionnalites h2::before {
+    content:'';
+    width:90%;
+    height:30px;
+    border-radius: 50px;
+    background: rgba(var(--rosergb), 0.7);
+    position:absolute;
+    z-index: -1;
+    right:-50px;
+    bottom:-15px;
+}
+#fonctionnalites h2::after {
+    content:'';
+    width:200px;
+    height:30px;
+    border-radius: 50px;
+    border-top-left-radius: 0;
+    background: rgba(var(--bleurgb), 0.7);
+    position:absolute;
+    z-index: -1;
+    right:-100px;
+    bottom:-35px;
+}
+
+#fonctionnalites ul li{
+    margin-top:150px;
+}
+#fonctionnalites ul li h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+#appli {
+    position:relative
+}
+#appli a {
+    background: var(--rose);
+    padding:10px;
+    border-radius:50px;
+    color:white;
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+}
+
+footer {
+    background: linear-gradient(to right, var(--rose), var(--mauve), var(--bleu));
+    padding:30px 0 20px;
+    margin-top: 100px;
+    border-radius: 30px 30px 0 0;
+}
+@media screen and (min-width:992px){
+    #appli img {
+        position:absolute;
+        top: -75px;
+        right: 0;
+        width: 25%;
+    }
+    #appli div {
+        width:75%;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:991px){
+    #intro .img-left {
+        width:50% !important;
+    }
+    #appli img {
+        position:absolute;
+        top: -55px;
+        right: -50px;
+        width: 120px;
+    }
+}
+
+
+@media screen and (max-width:768px){
+    header .mob{
+        height: 2px;
+        width:35px;
+        background: white;
+        position: relative;
+    }
+    header .mob::before, 
+    header .mob::after {
+        content: '';
+        height: 2px;
+        width:35px;
+        background: white;
+        position: absolute;
+    }
+    header .mob::before {
+        top:-7px;
+    }
+    header .mob::after {
+        top:7px;
+    }
+    header #titre {
+        padding: 100px 0;
+    }
+    header #titre h1 {
+        font-size: 4rem;
+    }
+    header #titre h2 {
+        font-size: 3rem;
+    }
+
+    .img-left {
+        margin:auto;
+    }
+
+    #presentation, #appli {
+        width:90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #fonctionnalites h2::before {
+        width:70%;
+        right:20px;
+    }
+    #fonctionnalites h2::after {
+        right:0px;
+    }
+    #fonctionnalites ul li{
+        margin-top:50px;
+    }
+    #fonctionnalites ul li div:last-of-type{
+        margin-top:50px;
+    }
+    #appli img {
+        width: 75%;
+        margin:auto;
+        margin-top:-100px;
+        display: inherit;
+    }
+    #appli a {
+        display: inline-block;
+    }
+    #appli a:last-of-type {
+        margin-top:10px;
+    }
+}
+
